@@ -116,6 +116,15 @@ class RealDebridService {
     });
   }
 
+  async getTranscodingOptions(fileId: string): Promise<any> {
+    try {
+      return await this.makeRequest(`/streaming/transcode/${fileId}`);
+    } catch (error) {
+      console.error('Error getting transcoding options:', error);
+      throw new Error('Failed to get transcoding options');
+    }
+  }
+
   async processAndStream(magnetLink: string): Promise<string> {
     try {
       // Add magnet to Real-Debrid

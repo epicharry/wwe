@@ -10,6 +10,7 @@ export interface Movie {
   duration: number;
   streamUrl?: string;
   magnetLink?: string;
+  fileId?: string;
 }
 
 export interface TorrentResult {
